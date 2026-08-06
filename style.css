@@ -1,10 +1,41 @@
+:root {
+    --cor-primaria: #183C63;
+    --cor-secundaria: #3782d2;
+    --cor-fundo: #09e477;
+    --cor-texto: #151428;
+    --cor-contraste: #f3eef7;
+    --cor-botao: #f9f9f9;
+    --cor-borda: #183C63;
+
+    --fonte-texto: "Segoe UI", sans-serif;
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo escuro */
+.tema-escuro {
+    --cor-primaria: #0f2742;
+    --cor-secundaria: #7bb8ff;
+    --cor-fundo: #151428;
+    --cor-texto: #ffffff;
+    --cor-contraste: #f3eef7;
+    --cor-botao: #2b2b3d;
+    --cor-borda: #7bb8ff;
+}
+
 body {
     max-width: 100vw;
+    margin: 0;
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 header {
-    background-color: #191c1e;
-    color: #FFFFFF;
+    background-color: var(--cor-primaria);
+    color: var(--cor-contraste);
     text-align: center;
     margin: 0 auto;
     padding: 16px;
@@ -15,13 +46,11 @@ header {
 }
 
 main {
-    background-color: #b9bdbb;
-    color: #000000;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     margin: 0 auto;
     padding: 16px;
-}
 
-main {
     display: flex;
     flex-wrap: wrap;
 }
@@ -32,11 +61,16 @@ article {
     align-items: center;
     text-align: center;
     justify-content: center;
-    border: 1px solid #183C63;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    
     margin: 16px;
     gap: 16px;
     padding: 16px;
     flex: 1 1 25%;
+
+    background-color: var(--cor-contraste);
+    color: var(--cor-texto);
 }
 
 main img {
@@ -49,12 +83,70 @@ p,
 button {
     margin-bottom: 12px;
 }
+
+/* Links */
 .artigo-fonte a {
-    color: #07376b;
+    color: var(--cor-primaria);
     font-weight: bold;
     text-decoration: none;
 }
 
 .artigo-fonte a:hover {
     text-decoration: underline;
+}
+
+/* Botões */
+button {
+    background-color: var(--cor-botao);
+    border: 1px solid var(--cor-borda);
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Ajustes do modo escuro */
+.tema-escuro a {
+    color: var(--cor-secundaria);
+}
+
+.tema-escuro p {
+    color: var(--cor-texto);
+}
+
+.tema-escuro header p {
+    color: var(--cor-contraste);
+}
+
+.tema-escuro article {
+    background-color: #1f1f33;
+}
+.btn-tema-escuro {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+
+    font-size: 32px;
+    padding: 12px;
+
+    background-color: var(--cor-primaria);
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tema-escuro .btn-tema-escuro {
+    background-color: var(--cor-secundaria);
 }
